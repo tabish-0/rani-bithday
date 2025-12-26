@@ -15,12 +15,22 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
 
   <body>
+    <audio id="bgMusic" src="song.mp3" loop></audio>
+    <script>
+      document.addEventListener(
+        "click",
+        function () {
+          const m = document.getElementById("bgMusic");
+          m.play().catch(() => {});
+        },
+        { once: true }
+      );
+    </script>
+    
     <div id="wrapper">
       <div class="flag__birthday">
         <img src="./images/1.png" alt="" width="350" class="flag__left" />
@@ -159,17 +169,16 @@
               <h3>To You!</h3>
 
               <h2>
-                Happy birthday 🥳🎂🥳 loving and caring 💖🎂 <b>Dear</b> Rani, today I
-                just want to speak from my heart. I
-                didn’t realize how close we would become — but slowly you
-                reached my heart, and now you are truly my sweetest sister. I
-                always wish I could take away the worries and pain you carry
-                alone, and fill your days with peace and smiles. Remember you
-                are always welcome 🤗 you can talk to me anytime, even about the
-                things you cannot share with others. May this year bring you
-                happiness, strength, and all your dreams coming true ✨ I feel
-                lucky to have you as my sister. Stay happy, stay blessed, and
-                keep smiling always 😌🎉💝
+                Happy birthday 🥳🎂🥳 loving and caring 💖🎂 <b>Dear</b> Rani,
+                today I just want to speak from my heart. I didn’t realize how
+                close we would become — but slowly you reached my heart, and now
+                you are truly my sweetest sister. I always wish I could take
+                away the worries and pain you carry alone, and fill your days
+                with peace and smiles. Remember you are always welcome 🤗 you
+                can talk to me anytime, even about the things you cannot share
+                with others. May this year bring you happiness, strength, and
+                all your dreams coming true ✨ I feel lucky to have you as my
+                sister. Stay happy, stay blessed, and keep smiling always 😌🎉💝
               </h2>
 
               <div class="imageCute2">
@@ -257,8 +266,7 @@
         setTimeout(function () {
           intervalContent = setInterval(function () {
             if (currentIndexLetter < charArrDateLetter.length) {
-              text__letter.textContent +=
-                charArrDateLetter[currentIndexLetter];
+              text__letter.textContent += charArrDateLetter[currentIndexLetter];
               currentIndexLetter++;
             } else {
               clearInterval(intervalContent);
@@ -274,7 +282,9 @@
         currentIndexLetter = 0;
         currentIndexTitle = 0;
 
-        document.querySelector("#heart__letter").classList.remove("animationOp");
+        document
+          .querySelector("#heart__letter")
+          .classList.remove("animationOp");
         document.querySelector(".love__img").classList.remove("animationOp");
         document.querySelector("#mewmew").classList.remove("animationOp");
 
